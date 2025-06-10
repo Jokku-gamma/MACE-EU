@@ -1,0 +1,359 @@
+/* Base Styles for Header and Footer (Copied from style.css for consistency) */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- HEADER STYLES (Copied for consistency) --- */
+.main-header {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    padding: 15px 0;
+    border-bottom: 1px solid #004085;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    flex-basis: auto;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.header-logo {
+    max-height: 45px; /* Use the mobile-first size as base */
+    margin-right: 15px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+}
+
+.logo-title h1 {
+    font-size: 1.8rem; /* Use the mobile-first size as base */
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav {
+    flex-basis: auto;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: #e0f2f7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.main-nav ul li a.active::after,
+.main-nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    left: 0;
+    bottom: -8px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.main-nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+.main-nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FOOTER STYLES (Copied for consistency) --- */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.footer-verse {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-contact a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+main {
+    padding-top: 20px; /* Space below header */
+}
+
+.section {
+    padding: 60px 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(20px); /* Initial state for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.3s; /* Delay to appear after header */
+}
+
+.section:nth-of-type(2) { animation-delay: 0.5s; } /* Stagger animation */
+.section:nth-of-type(3) { animation-delay: 0.7s; }
+.section:nth-of-type(4) { animation-delay: 0.9s; }
+
+
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-heading span {
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* About Page Hero/Intro Section */
+#about-hero {
+    background: linear-gradient(135deg, #e0f2f7, #f0f8ff); /* Light, inviting gradient */
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: 20px; /* Space from header */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+#about-hero h2 {
+    font-size: 2.8rem; /* Larger heading */
+    color: #0056b3;
+    margin-bottom: 30px;
+    animation: textFadeInUp 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+#about-hero .hero-intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem; /* Prominent intro text */
+    line-height: 1.7;
+    color: #34495e;
+    animation: textFadeInUp 1s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* Content Blocks for Our Story, Beliefs, Affiliation */
+.content-block {
+    padding: 50px 40px; /* Generous padding */
+    border-top: 1px solid #eee; /* Subtle separator */
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.content-block:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Lift on hover */
+    transform: translateY(-5px);
+}
+
+.content-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; /* Attractive subheading */
+    color: #4a69bd; /* A calming blue */
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.content-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* Shorter underline */
+    height: 3px;
+    background-color: #4a69bd;
+    border-radius: 1.5px;
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 20px auto; /* Center text */
+    text-align: justify;
+    color: #555;
+}
+
+.content-block p strong {
+    color: #007bff; /* Highlight bold text */
+}
+
+/* Animations (copied from style.css for consistency) */
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textFadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments (Copied and adapted for about.css) */
+@media (max-width: 992px) {
+    .header-content { flex-direction: column; text-align: center; }
+    .logo-title { margin-bottom: 15px; justify-content: center; width: 100%; }
+    .main-nav { width: 100%; text-align: center; margin-top: 10px; }
+    .main-nav ul li { margin: 0 12px; }
+    .header-logo { max-height: 48px; }
+    .logo-title h1 { font-size: 1.7rem; }
+    .main-nav ul li a { font-size: 0.95rem; }
+
+    .section-heading { font-size: 2rem; margin-bottom: 30px; }
+    #about-hero h2 { font-size: 2.2rem; }
+    #about-hero .hero-intro-text { font-size: 1.1rem; }
+    .content-heading { font-size: 1.8rem; }
+    .content-block p { font-size: 1rem; padding: 0 15px; } /* Add padding for mobile */
+}
+
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    .container { width: 95%; padding: 15px 0; }
+    .main-header { padding: 10px 0; }
+    .logo-title { margin-bottom: 10px; }
+    .header-logo { max-height: 40px; }
+    .logo-title h1 { font-size: 1.5rem; }
+    .main-nav ul li { margin: 0 8px; }
+    .main-nav ul li a { font-size: 0.9rem; padding: 5px 0; }
+    .main-nav ul li a.active::after, .main-nav ul li a:hover::after { bottom: -5px; }
+
+    .section-heading { font-size: 1.8rem; margin-bottom: 25px; }
+    #about-hero h2 { font-size: 1.8rem; }
+    #about-hero .hero-intro-text { font-size: 1rem; }
+    .content-heading { font-size: 1.6rem; }
+    .content-block { padding: 40px 20px; } /* Adjust padding for mobile */
+    .content-block p { font-size: 0.95rem; }
+
+    footer { padding: 20px; font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    body { font-size: 14px; }
+    .main-nav ul li { display: block; margin: 8px 0; }
+    .header-content { padding: 0 10px; }
+    .logo-title h1 { font-size: 1.3rem; }
+    .main-nav ul li a { font-size: 0.9rem; }
+
+    .section-heading { font-size: 1.5rem; }
+    #about-hero h2 { font-size: 1.5rem; }
+    #about-hero .hero-intro-text { font-size: 0.95rem; }
+    .content-heading { font-size: 1.4rem; }
+    .content-block { padding: 30px 15px; } /* Further adjust padding */
+    .content-block p { font-size: 0.9rem; }
+
+    footer { padding: 15px; font-size: 0.75rem; }
+}
