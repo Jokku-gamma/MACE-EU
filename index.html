@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="DHLw88j09_uyWJ1ltRXRqHn1nD7wfPdNTZb5v--V_Kg" />
+    <meta name="google-site-verification" content="DHLw88j09_uyWJ1ltRXRqHn1nD7wfPdPdNTZb5v--V_Kg" />
     <title>MACE Evangelical Union (EU) - Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40JuKCpsKzHV2hLxXllQp7EVJbF+R4qRjF+m4N5FqfK4Cq7LpXh9gP/C7A3k7Z/m1s1+k7p4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/index_styles.css">
+    <link rel="stylesheet" href="styles/announcement-bell.css">
 </head>
 <body>
 
@@ -19,6 +21,11 @@
             </div>
             <nav class="main-nav">
                 <ul>
+                    <li>
+                        <a href="announcement.html" id="bellNotificationTrigger" class="nav-bell-image-container" aria-label="Notifications">
+                            <img src="images/bell1.png" alt="Notifications Bell" class="nav-bell-image"> <span class="notification-badge" id="notificationBadge">2</span>
+                        </a>
+                    </li>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="activities.html">Activities</a></li>
@@ -30,8 +37,6 @@
     </header>
 
     <main>
-        
-
         <section id="vision-mission-home" class="section container">
             <div class="vm-entry">
                 <div class="vm-heading-container">
@@ -99,5 +104,27 @@
         </div>
     </footer>
 
+    <script src="scripts/announcement.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal-item');
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of item visible to trigger
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
