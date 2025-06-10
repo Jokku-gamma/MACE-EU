@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACE EU - Activities</title> <meta name="description" content="Explore the diverse and enriching activities of MACE Evangelical Union (EU) on campus and beyond.">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/activities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-title">
+                <a href="index.html" class="logo-link">
+                    <img src="images/eu.png" alt="MACE EU Logo" class="header-logo">
+                    <h1>MACE EU</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="activities.html" class="active">Activities</a></li>
+                    <li><a href="events.html">Events</a></li> <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-intro" class="section container intro-section">
+            <h2 class="section-heading"><span>Our Activities</span></h2> <p class="intro-text">
+                At MACE EU, our vibrant community thrives through a variety of engaging and enriching activities designed for spiritual growth, fellowship, and outreach. Discover how you can connect and participate!
+            </p>
+        </section>
+
+        <section id="all-activities" class="section container category-section"> <h2 class="section-sub-heading"><span>Explore Our Activities</span></h2> <div class="activity-card-container">
+                <div class="activity-card reveal-item">
+                    <div class="activity-text">
+                        <i class="fas fa-users-line icon-small"></i>
+                        <h3>SGMM (Student-Graduate Monthly Meetup)</h3>
+                        <p>Students and graduates meet up once every month for praying for our campus, planning new events, sharing testimonies, and fostering mentorship relationships. It's a vital time for connection and strategic prayer.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/sgmm.jpeg" alt="Student Graduate Monthly Meetup">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item reverse-layout">
+                    <div class="activity-text">
+                        <i class="fas fa-campground icon-small"></i>
+                        <h3>Home Camp</h3>
+                        <p>Students stay together in a graduate's house as their own home. During these immersive camps, we deepen our faith through intensive prayer for the campus, enjoy fellowship, cook meals together, and share life-transforming experiences.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/home.jpeg" alt="Home Camps">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item">
+                    <div class="activity-text">
+                        <i class="fas fa-book-bible icon-small"></i>
+                        <h3>Weekly Bible Studies</h3>
+                        <p>Engage in deep discussions and grow in faith through our regular Bible study sessions, held both on campus and online. We delve into scripture, share insights, and apply biblical principles to our daily lives.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/bible.jpeg" alt="Weekly Bible Studies">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item reverse-layout">
+                    <div class="activity-text">
+                        <i class="fas fa-hands-praying icon-small"></i>
+                        <h3>Prayer Meetings</h3>
+                        <p>Come together to pray for our campus, personal needs, and global concerns in a supportive and uplifting environment. These gatherings strengthen our communal bond and deepen our reliance on God.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/prayer.jpeg" alt="Prayer Meetings">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item">
+                    <div class="activity-text">
+                        <i class="fas fa-handshake-angle icon-small"></i>
+                        <h3>Fellowship Gatherings</h3>
+                        <p>Build meaningful relationships through our regular fellowship events, outings, and small group discussions. We share joy, support each other, and grow together in a loving community.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/worship.jpeg" alt="Fellowship Gatherings">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item reverse-layout">
+                    <div class="activity-text">
+                        <i class="fas fa-users icon-small"></i>
+                        <h3>Mini Prayer Cell (MPC)</h3>
+                        <p>Each student is connected with a graduate for sharing their worries, prayer requests, and life updates in a confidential and supportive setting. MPCs provide personalized mentorship and accountability.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/mpc.jpeg" alt="Mini Prayer Cell">
+                    </div>
+                </div>
+
+                <div class="activity-card reveal-item">
+                    <div class="activity-text">
+                        <i class="fas fa-shoe-prints icon-small"></i>
+                        <h3>Prayer Walk</h3>
+                        <p>Students walk through the campus, praying specifically for the campus environment, the faculty, the staff, and their fellow students. It's a powerful way to intercede for our academic community.</p>
+                    </div>
+                    <div class="activity-image">
+                        <img src="images/prayerwalk.jpeg" alt="Prayer Walk">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 MACE Evangelical Union. All Rights Reserved.</p>
+            <p class="footer-verse">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
+            <p class="footer-contact">Email: <a href="mailto:maceeu07@gmail.com">maceeu07@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal-item');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of item visible to trigger
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        observer.unobserve(entry.target); // Stop observing once revealed
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
