@@ -13,32 +13,46 @@
     --shadow-light: rgba(0, 0, 0, 0.08);
     --shadow-hover: rgba(0, 0, 0, 0.18);
     --card-border: #f0f0f0;
+
+    /* Base font size for rem calculations */
+    font-size: 16px; /* Default for 1rem */
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: #f5f7fa; /* A slightly cooler, very light background for the whole page */
-    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+    background-color: #f5f7fa;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-width: 320px; /* Ensures a minimum width for very small devices */
+}
+
+/* Ensure the main container scales */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Your desired max width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Default horizontal padding */
+    box-sizing: border-box; /* Include padding in element's total width */
 }
 
 
 /* --- Announcement Page Header/Hero --- */
 .announcement-hero {
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%); /* Gradient background */
-    padding: 100px 0; /* More vertical space */
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    padding: 6.25rem 0; /* 100px / 16px = 6.25rem */
     text-align: center;
-    color: white; /* White text for contrast */
-    border-bottom-left-radius: 30px; /* Stylish border radius */
+    color: white;
+    border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    margin-bottom: 60px; /* More space before content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 3.75rem; /* 60px / 16px = 3.75rem */
     position: relative;
-    overflow: hidden; /* For any background animations */
+    overflow: hidden;
 }
 
-.announcement-hero::before { /* A subtle overlay for texture */
+.announcement-hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -52,135 +66,135 @@ body {
 
 .announcement-hero h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5em; /* Even larger heading */
-    margin-bottom: 20px;
+    font-size: 3.5rem; /* Large heading, scales with rem */
+    margin-bottom: 1.25rem; /* 20px */
     position: relative;
-    z-index: 1; /* Bring text to front of overlay */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+    z-index: 1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .announcement-hero h2::after {
     content: '';
     display: block;
-    width: 80px; /* Longer underline effect */
-    height: 5px; /* Thicker underline */
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-    margin: 15px auto 0;
+    width: 5rem; /* 80px */
+    height: 0.3125rem; /* 5px */
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0.9375rem auto 0; /* 15px */
     border-radius: 3px;
 }
 
 .announcement-hero p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.3em;
-    max-width: 800px;
+    font-size: 1.3rem;
+    max-width: 50rem; /* 800px */
     margin: 0 auto;
     opacity: 0.9;
-    z-index: 1; /* Bring text to front */
+    z-index: 1;
+    padding: 0 1rem; /* Added default padding for safety */
 }
 
 /* --- Main Announcements Grid & Section Heading --- */
 .announcement-page-main {
-    padding: 40px 0 100px 0; /* Increased bottom padding */
+    padding: 2.5rem 0 6.25rem 0; /* 40px to 100px */
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 60px; /* More space below heading */
+    margin-bottom: 3.75rem; /* 60px */
 }
 
 .section-heading span {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8em; /* Default large font size */
+    font-size: 2.8rem; /* Scales with rem */
     color: var(--text-dark);
     position: relative;
-    padding-bottom: 15px;
-    display: inline-block; /* For proper underline centering */
+    padding-bottom: 0.9375rem; /* 15px */
+    display: inline-block;
 }
 
 .section-heading span::after {
     content: '';
     display: block;
-    width: 100px; /* Longer, thicker underline */
-    height: 5px;
+    width: 6.25rem; /* 100px */
+    height: 0.3125rem; /* 5px */
     background-color: var(--dark-green);
-    margin: 10px auto 0;
+    margin: 0.625rem auto 0; /* 10px */
     border-radius: 3px;
 }
 
 .announcements-list-full {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Larger min column width */
-    gap: 40px; /* Increased gap */
-    padding: 0 20px; /* More padding on sides */
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); /* min 352px (350px was fine, but 22rem is more fluid) */
+    gap: 2.5rem; /* 40px */
+    /* Padding will be handled by .container above for consistency */
 }
 
 /* --- Announcement Card Styling --- */
 .announcement-card {
     background-color: var(--card-bg);
-    border-radius: 15px; /* Even more rounded corners */
-    box-shadow: 0 8px 30px var(--shadow-light); /* More pronounced shadow */
-    padding: 35px; /* Increased padding */
-    position: relative; /* For background graphic and hover effects */
-    overflow: hidden; /* Ensures graphic doesn't spill out */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 2.1875rem; /* 35px */
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease; /* Smoother animation */
-    cursor: pointer; /* Indicate interactivity */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    cursor: pointer;
 }
 
 .announcement-card:hover {
-    transform: translateY(-12px) scale(1.02); /* Lift and slight enlarge on hover */
-    box-shadow: 0 18px 45px var(--shadow-hover); /* Stronger shadow on hover */
+    transform: translateY(-0.75rem) scale(1.02); /* 12px */
+    box-shadow: 0 18px 45px var(--shadow-hover);
 }
 
-/* Background Graphic for Cards */
 .card-background-graphic {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at top left, rgba(76, 175, 80, 0.05) 0%, transparent 70%); /* Subtle gradient */
+    background: radial-gradient(circle at top left, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
     opacity: 0.5;
     transition: opacity 0.3s ease;
-    z-index: 0; /* Keep behind content */
+    z-index: 0;
 }
 
 .announcement-card:hover .card-background-graphic {
-    opacity: 0.8; /* Slightly more visible on hover */
+    opacity: 0.8;
 }
 
 .card-content {
-    position: relative; /* Ensure content is above graphic */
+    position: relative;
     z-index: 1;
 }
 
 .announcement-card-header {
     display: flex;
-    align-items: flex-start; /* Align icon and text to top */
-    margin-bottom: 25px;
+    align-items: flex-start;
+    margin-bottom: 1.5625rem; /* 25px */
     color: var(--primary-green);
-    padding-bottom: 15px;
+    padding-bottom: 0.9375rem; /* 15px */
     border-bottom: 1px solid var(--medium-gray);
 }
 
 .announcement-card-header i {
-    font-size: 32px; /* Even larger icons */
-    margin-right: 20px;
+    font-size: 2rem; /* 32px */
+    margin-right: 1.25rem; /* 20px */
     color: var(--dark-green);
-    background-color: rgba(76, 175, 80, 0.1); /* Light background for icon */
+    background-color: rgba(76, 175, 80, 0.1);
     border-radius: 50%;
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for icon */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .announcement-card-header h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px; /* Larger heading in card */
+    font-size: 1.625rem; /* 26px */
     color: var(--text-dark);
     margin: 0;
     line-height: 1.3;
@@ -188,33 +202,33 @@ body {
 
 .announcement-card p {
     font-family: 'Open Sans', sans-serif;
-    font-size: 17px; /* Slightly larger text */
-    line-height: 1.8; /* Improved readability */
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.8;
     color: var(--text-medium);
-    margin-bottom: 25px;
+    margin-bottom: 1.5625rem; /* 25px */
     flex-grow: 1;
 }
 
 .announcement-card p strong {
     color: var(--text-dark);
-    font-weight: 600; /* Make strong text stand out more */
+    font-weight: 600;
 }
 
 .announcement-date {
-    font-size: 14.5px; /* Slightly larger date font */
+    font-size: 0.90625rem; /* 14.5px */
     color: var(--text-light);
     text-align: right;
     display: block;
     margin-top: auto;
     border-top: 1px dashed var(--card-border);
-    padding-top: 15px;
-    font-weight: 300; /* Lighter weight for date */
+    padding-top: 0.9375rem; /* 15px */
+    font-weight: 300;
 }
 
 /* --- Fade-in Animation for Cards (reveal-item) --- */
 .reveal-item {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.25rem); /* 20px */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -225,142 +239,162 @@ body {
 
 
 /* --- Responsive adjustments --- */
-/* For screens smaller than 992px (typical tablet landscape and smaller desktops) */
-@media (max-width: 992px) {
-    .announcement-hero {
-        padding: 80px 0;
-    }
-    .announcement-hero h2 {
-        font-size: 2.5em; /* Adjusted hero heading */
-    }
-    .announcement-hero p {
-        font-size: 1.1em;
-        padding: 0 15px; /* Add some horizontal padding */
-    }
-    .section-heading span {
-        font-size: 2.2em; /* Adjusted section heading */
-    }
-    .announcements-list-full {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller min column width */
-        gap: 30px;
-    }
-    .announcement-card {
-        padding: 30px;
-    }
-    .announcement-card-header h3 {
-        font-size: 22px;
+
+/* Base adjustment for smaller rem scaling */
+@media (max-width: 1200px) {
+    :root {
+        font-size: 15px; /* Slightly decrease base font size for rem units */
     }
 }
 
-/* For screens smaller than 768px (typical tablet portrait and larger phones) */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+    :root {
+        font-size: 14px; /* Further decrease base font size */
+    }
     .announcement-hero {
-        padding: 60px 20px;
+        padding: 5rem 0; /* 80px */
+        margin-bottom: 3rem; /* 48px */
+    }
+    .announcement-hero h2 {
+        font-size: 2.5rem; /* Adjusted hero heading */
+    }
+    .announcement-hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    .section-heading {
+        margin-bottom: 3rem; /* 48px */
+    }
+    .section-heading span {
+        font-size: 2.2rem; /* Adjusted section heading */
+    }
+    .announcements-list-full {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* min 288px (280px prev) */
+        gap: 2rem; /* 32px */
+    }
+    .announcement-card {
+        padding: 1.875rem; /* 30px */
+    }
+    .announcement-card-header h3 {
+        font-size: 1.5rem; /* 24px */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 13px; /* Even smaller base font size for tablet portrait */
+    }
+    .announcement-hero {
+        padding: 4rem 1.25rem; /* 64px 20px */
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
     .announcement-hero h2 {
-        font-size: 2em; /* Adjusted hero heading */
+        font-size: 2.2rem; /* Adjusted hero heading */
     }
     .announcement-hero p {
-        font-size: 1em;
+        font-size: 1rem;
     }
     .section-heading {
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem; /* 40px */
     }
     .section-heading span {
-        font-size: 1.8em; /* Adjusted section heading to be smaller and relative */
+        font-size: 1.8rem; /* Adjusted section heading */
     }
     .announcements-list-full {
-        grid-template-columns: 1fr; /* Single column layout for better readability */
-        gap: 25px;
-        padding: 0 15px;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 1.5625rem; /* 25px */
+        padding: 0 1rem; /* 16px */
     }
     .announcement-card {
-        padding: 25px;
+        padding: 1.5625rem; /* 25px */
     }
     .announcement-card-header i {
-        font-size: 28px;
-        padding: 8px;
+        font-size: 1.75rem; /* 28px */
+        padding: 0.5rem; /* 8px */
     }
     .announcement-card-header h3 {
-        font-size: 20px;
+        font-size: 1.375rem; /* 22px */
     }
     .announcement-card p {
-        font-size: 15.5px;
+        font-size: 0.96875rem; /* 15.5px */
     }
 }
 
-/* For screens smaller than 480px (typical small phones) */
-@media (max-width: 480px) {
+@media (max-width: 576px) { /* Added this common mobile breakpoint */
+    :root {
+        font-size: 12px; /* Base font size for small phones */
+    }
+    .container {
+        padding: 0 15px; /* Reduce container padding further */
+    }
     .announcement-hero {
-        padding: 40px 15px; /* Reduced padding for very small screens */
+        padding: 3rem 1rem; /* 48px 16px */
     }
     .announcement-hero h2 {
-        font-size: 1.6em; /* Smaller hero heading for compact screens */
-        margin-bottom: 15px;
+        font-size: 1.8rem; /* Smaller hero heading */
+        margin-bottom: 1rem;
     }
     .announcement-hero h2::after {
-        width: 60px; /* Shorter underline */
-        height: 3px;
-        margin: 10px auto 0;
+        width: 3.75rem; /* 60px */
+        height: 0.1875rem; /* 3px */
+        margin: 0.625rem auto 0; /* 10px */
     }
     .announcement-hero p {
-        font-size: 0.9em;
-        padding: 0 10px;
+        font-size: 0.9rem;
     }
     .section-heading {
-        margin-bottom: 30px; /* Less margin below heading */
+        margin-bottom: 2rem; /* 32px */
     }
     .section-heading span {
-        font-size: 1.6em; /* Smaller section heading for very small phones */
-        padding-bottom: 10px;
+        font-size: 1.6rem; /* Smaller section heading */
+        padding-bottom: 0.625rem; /* 10px */
     }
     .section-heading span::after {
-        width: 80px; /* Shorter underline */
-        height: 3px;
-        margin: 8px auto 0;
-    }
-    .announcements-list-full {
-        padding: 0 10px; /* Smaller padding on sides */
+        width: 5rem; /* 80px */
+        height: 0.1875rem; /* 3px */
+        margin: 0.5rem auto 0; /* 8px */
     }
     .announcement-card {
-        padding: 20px;
+        padding: 1.25rem; /* 20px */
     }
     .announcement-card-header i {
-        font-size: 24px;
-        margin-right: 12px;
-        padding: 6px;
+        font-size: 1.5rem; /* 24px */
+        margin-right: 0.75rem; /* 12px */
+        padding: 0.375rem; /* 6px */
     }
     .announcement-card-header h3 {
-        font-size: 18px;
+        font-size: 1.125rem; /* 18px */
     }
     .announcement-card p {
-        font-size: 15px;
+        font-size: 0.9375rem; /* 15px */
         line-height: 1.6;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem; /* 20px */
     }
     .announcement-date {
-        font-size: 13px;
-        padding-top: 10px;
+        font-size: 0.8125rem; /* 13px */
+        padding-top: 0.625rem; /* 10px */
     }
 }
 
-/* For screens smaller than 360px (very small phones) */
-@media (max-width: 360px) {
+/* For screens smaller than 400px (very small phones) */
+@media (max-width: 400px) {
+    .container {
+        padding: 0 10px; /* Even tighter container padding */
+    }
     .announcement-hero h2 {
-        font-size: 1.4em;
+        font-size: 1.6rem;
     }
     .announcement-hero p {
-        font-size: 0.85em;
+        font-size: 0.85rem;
     }
     .section-heading span {
-        font-size: 1.4em;
+        font-size: 1.4rem;
     }
     .announcement-card-header h3 {
-        font-size: 16px;
+        font-size: 1rem; /* 16px */
     }
     .announcement-card p {
-        font-size: 14px;
+        font-size: 0.875rem; /* 14px */
     }
 }
