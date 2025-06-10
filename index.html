@@ -1,58 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MACE EU | Evangelical Union</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #003366;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      margin-top: 0;
-      color: #00796b;
-    }
-
-    .animated-text {
-      margin-top: 40px;
-      font-size: 1.8em;
-      color: #f57c00;
-      animation: blink 1.5s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9em;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACE Evangelical Union (EU) - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index_styles.css">
 </head>
 <body>
-  <h1>Welcome to MACE EU</h1>
-  <h2>Evangelical Union - Youth for Christ</h2>
-  <div class="animated-text">Website In Progress...</div>
-  <div class="footer">Stay tuned for updates • Powered by Christ</div>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-title">
+                <a href="index.html" class="logo-link">
+                    <img src="images/eu.png" alt="MACE EU Logo" class="header-logo">
+                    <h1>MACE EU</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="container hero-section">
+            <div class="hero-text">
+                <p class="intro-text">
+                    The MACE Evangelical Union (EU) is a dynamic Christian fellowship for college students who desire to grow in their relationship with Jesus Christ while navigating campus life. We provide a welcoming community where students can worship together, study God's Word, develop meaningful friendships, and support one another through the challenges of college life.
+                </p>
+                <a href="about.html" class="btn primary-btn">Learn More About Us</a>
+            </div>
+        </section>
+
+        <section id="vision-mission-home" class="section container">
+            <div class="vm-entry">
+                <div class="vm-heading-container">
+                    <h3 class="vm-heading-home">Our Vision</h3>
+                </div>
+                <p class="vm-description-home">Transformed students impacting the campuses and the nation as disciples of The Lord Jesus Christ.</p>
+            </div>
+            <div class="vm-entry">
+                <div class="vm-heading-container">
+                    <h3 class="vm-heading-home">Our Mission</h3>
+                </div>
+                <p class="vm-description-home">UESI seeks to evangelize post-matric students in India, nurture them as disciples of the Lord Jesus Christ, that they may serve the Church and the society.</p>
+            </div>
+        </section>
+
+        <section id="activities-overview" class="section container">
+            <h2 class="section-heading"><span>Our Activities</span></h2>
+            <div class="activity-grid">
+                <div class="activity-item">
+                    <h3>Weekly Bible Studies</h3>
+                    <p>Join us for in-depth Bible studies where we explore God's Word together and discuss how to apply it to our daily lives as students.</p>
+                </div>
+                <div class="activity-item">
+                    <h3>Prayer Meetings</h3>
+                    <p>Come together to pray for our campus, personal needs, and global concerns in a supportive and uplifting environment.</p>
+                </div>
+                <div class="activity-item">
+                    <h3>Fellowship Gatherings</h3>
+                    <p>Build meaningful relationships through our regular fellowship events, outings, and small group discussions.</p>
+                </div>
+            </div>
+            <div class="text-center mt-40">
+                <a href="activities.html" class="btn secondary-btn">See All Activities</a>
+            </div>
+        </section>
+
+        <section id="join-us" class="section container">
+            <h2 class="section-heading"><span>Join Us On</span></h2>
+            <div class="join-us-content">
+                <p><strong>Every Wednesday</strong></p>
+                <p><strong>5:00 PM</strong></p>
+                <p><strong>St. James C.S.I Church</strong></p>
+                <p>College Junction, Kothamangalam</p>
+                <a href="https://www.google.com/maps/search/St.+James+CSI+Church,+Kothamangalam" target="_blank" class="btn map-btn map-link-button">View on Google Maps</a>
+                </div>
+            <div class="map-embed-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!4v1749543628157!6m8!1m7!1s1Gc3Tr-iXurKLPUuyRAa1w!2m2!1d10.05620112101444!2d76.61552963730836!3f117.90205!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 MACE Evangelical Union. All Rights Reserved.</p>
+            <p class="footer-verse">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
+            <p class="footer-contact">Email: <a href="mailto:maceeu07@gmail.com">maceeu07@gmail.com</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>
