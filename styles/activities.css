@@ -456,7 +456,7 @@ main {
 
 @media (max-width: 480px) {
     body { font-size: 14px; }
-    .main-nav ul li { display: block; margin: 8px 0; }
+    .main-nav ul li { margin: 8px 0; }
     .header-content { padding: 0 10px; }
     .logo-title h1 { font-size: 1.3rem; }
     .main-nav ul li a { font-size: 0.9rem; }
