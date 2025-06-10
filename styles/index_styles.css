@@ -168,9 +168,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    .main-nav ul li {
-        display: block; /* Stack nav items vertically on tiny screens */
-        margin: 10px 0;
+    .main-nav ul li { /* Stack nav items vertically on tiny screens */
+        margin: 5px 0;
     }
     .main-header {
         padding: 10px 0;
