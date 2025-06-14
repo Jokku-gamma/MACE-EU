@@ -33,32 +33,7 @@
     <main class="container announcement-page-main">
         <section id="all-announcements" class="section">
             <h2 class="section-heading"><span>All Announcements</span></h2>
-            <div class="announcements-list-full">
-                <div class="announcement-card reveal-item">
-                    <div class="card-background-graphic"></div> <div class="card-content">
-                        <div class="announcement-card-header">
-                            <i class="fas fa-bullhorn"></i>
-                            <h3>SGMM - Chapter 1 Update</h3>
-                        </div>
-                        <p><strong>SGMM - Chapter 1:</strong> Coming soon. The exact date will be announced shortly</p>
-                        <span class="announcement-date">Posted: June 10, 2025</span>
-                    </div>
-                </div>
-
-
-                <div class="announcement-card reveal-item">
-                     <div class="card-background-graphic"></div>
-                    <div class="card-content">
-                        <div class="announcement-card-header">
-                            <i class="fas fa-book-open"></i>
-                            <h3>Weekly Bible Study Resumes</h3>
-                        </div>
-                        <p>Weekly Bible studies will resume from July onwards</p>
-                        <span class="announcement-date">Posted: June 10, 2025</span>
-                    </div>
-                </div>
-
-
+            <div class="announcements-list-full" id="announcements-container">
                 </div>
         </section>
     </main>
@@ -73,23 +48,51 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('.reveal-item');
-            const observerOptions = {
-                root: null, // viewport
-                rootMargin: '0px',
-                threshold: 0.1 // 10% of item visible to trigger
-            };
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-revealed');
-                        observer.unobserve(entry.target); // Stop observing once revealed
+            const announcementsContainer = document.getElementById('announcements-container');
+            const announcementFiles = [
+                'announcements/sgmm-chapter-1.html',
+                'announcements/weekly-bible-study.html'
+                // Add new announcement file paths here in the order you want them to appear
+                // Example: 'announcements/new-event-info.html',
+            ];
+
+            async function loadAnnouncements() {
+                for (const file of announcementFiles) {
+                    try {
+                        const response = await fetch(file);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status} for ${file}`);
+                        }
+                        const htmlContent = await response.text();
+                        announcementsContainer.insertAdjacentHTML('beforeend', htmlContent);
+                    } catch (error) {
+                        console.error('Error loading announcement:', error);
                     }
+                }
+                applyRevealEffect(); // Apply the reveal effect after all announcements are loaded
+            }
+
+            function applyRevealEffect() {
+                const revealElements = document.querySelectorAll('.reveal-item');
+                const observerOptions = {
+                    root: null, // viewport
+                    rootMargin: '0px',
+                    threshold: 0.1 // 10% of item visible to trigger
+                };
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                            observer.unobserve(entry.target); // Stop observing once revealed
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(el => {
+                    observer.observe(el);
                 });
-            }, observerOptions);
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
+            }
+
+            loadAnnouncements();
         });
     </script>
 </body>
