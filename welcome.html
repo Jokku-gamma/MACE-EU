@@ -2,12 +2,61 @@
 <html>
 <head>
 <title>Welcome to MACE EU!</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Light grey background */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #4CAF50; /* A green accent border */
+  }
+  h1 {
+    color: #2e7d32; /* Darker green for heading */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+  p {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  .highlight {
+    color: #4CAF50; /* Green highlight for important text */
+    font-weight: bold;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 14px;
+  }
+</style>
 </head>
 <body>
-<p>Dear {{NAME}},</p>
-<p>Welcome to the MACE EU family! We are thrilled to have you join us.</p>
-<p>Get ready for an inspiring journey with daily Bible verses and uplifting messages.</p>
-<p>Best regards,</p>
-<p>The MACE EU Team</p>
+
+<div class="container">
+  <h1>Welcome to MACE EU!</h1>
+  <p>Dear <span class="highlight">{{NAME}}</span>,</p>
+  <p>We are absolutely <span class="highlight">thrilled</span> to welcome you to the <span class="highlight">MACE EU family!</span> Your journey with us begins now, and we're excited to have you as part of our community.</p>
+  <p>Get ready for a truly <span class="highlight">inspiring journey</span> filled with wisdom and grace. Each day, you'll receive <span class="highlight">daily Bible verses</span> and uplifting messages directly to your inbox, designed to encourage and strengthen you.</p>
+  <p>We believe this will be a wonderful experience for you, and we look forward to connecting with you.</p>
+  <div class="footer">
+    <p>With blessings and warm regards,</p>
+    <p>The MACE EU Family</p>
+  </div>
+</div>
+
 </body>
 </html>
