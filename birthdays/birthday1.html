@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday from MACE EU!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            box-sizing: border-box;
+        }
+
+        /* Main Container for the Card */
+        .birthday-card-container {
+            background: linear-gradient(145deg, #ffffff, #fdfdfd); /* Soft white gradient */
+            border-radius: 25px; /* More rounded corners */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Deeper, softer shadow */
+            max-width: 600px;
+            width: 90%; /* Responsive width */
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* For pseudo-elements */
+            animation: fadeInScale 1s ease-out forwards; /* Fade-in animation */
+            margin: 20px 0; /* Add margin for small screens */
+        }
+
+        /* Subtle background graphics (celebratory confetti/dots) */
+        .birthday-card-container::before,
+        .birthday-card-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            background-color: #4CAF50; /* Primary green */
+            animation: floatUpDown 6s ease-in-out infinite;
+        }
+
+        .birthday-card-container::before {
+            width: 80px;
+            height: 80px;
+            top: -20px;
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        .birthday-card-container::after {
+            width: 100px;
+            height: 100px;
+            bottom: -30px;
+            right: -30px;
+            background-color: #28a745; /* Dark green */
+            animation-delay: 1.5s;
+        }
+
+        /* Main Heading */
+        .birthday-card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em; /* Large, elegant heading */
+            color: #4CAF50; /* A vibrant green */
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1; /* Ensure text is above background elements */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+            animation: slideInFromTop 1s ease-out forwards;
+        }
+
+        /* Sub-heading for the name */
+        .birthday-card h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2.2em; /* Prominent name */
+            color: #333;
+            margin-bottom: 30px;
+            animation: slideInFromBottom 1s ease-out forwards;
+            animation-delay: 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Message Paragraph */
+        .birthday-card p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bible Verse Section */
+        .bible-verse-section {
+            background-color: #e6f7e6; /* Very light green background */
+            border-left: 5px solid #28a745; /* Green accent bar */
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .bible-verse-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .bible-verse-section blockquote {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bible-verse-section cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: right;
+        }
+
+        /* Footer/Sender Info */
+        .sender-info {
+            margin-top: 40px;
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sender-info strong {
+            color: #333;
+        }
+
+        /* Animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInFromTop {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInFromBottom {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .birthday-card-container {
+                padding: 30px 20px; /* Adjust padding for smaller screens */
+                border-radius: 0; /* Remove border-radius on very small screens for full width */
+                width: 100%;
+                box-shadow: none; /* Remove shadow on full-width mobile view */
+            }
+            body {
+                align-items: flex-start; /* Align to top on small screens */
+                min-height: auto; /* Remove min-height */
+            }
+            .birthday-card h1 {
+                font-size: 2.5em;
+            }
+            .birthday-card h2 {
+                font-size: 1.8em;
+            }
+            .birthday-card p {
+                font-size: 1em;
+            }
+            .bible-verse-section {
+                padding: 20px 15px;
+            }
+            .bible-verse-section h3 {
+                font-size: 1.3em;
+            }
+            .bible-verse-section blockquote {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .birthday-card h1 {
+                font-size: 2em;
+            }
+            .birthday-card h2 {
+                font-size: 1.5em;
+            }
+            .birthday-card p {
+                font-size: 0.95em;
+            }
+            .bible-verse-section h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-card-container">
+        <div class="birthday-card">
+            <h1>Happy Birthday!</h1>
+            <h2>Dear {{NAME}},</h2>
+            <p>
+                The MACE Evangelical Union wishes you a day filled with joy, blessings, and God's abundant love. May this new year of your life be marked by spiritual growth, fulfilling experiences, and continued guidance from Him. We are truly blessed to have you as part of our fellowship.
+            </p>
+
+            <div class="bible-verse-section">
+                <h3>A Special Verse for You:</h3>
+                <blockquote>
+                    "For I know the plans I have for you,” declares the Lord, “plans to prosper you and not to harm you, plans to give you hope and a future."
+                </blockquote>
+                <cite>— Jeremiah 29:11</cite>
+            </div>
+
+            <p>
+                May this verse be a source of encouragement and strength as you embark on another wonderful year.
+            </p>
+
+            <div class="sender-info">
+                Warmly,<br>
+                The Team at <strong>MACE Evangelical Union</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
