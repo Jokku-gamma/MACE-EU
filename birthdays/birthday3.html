@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyful Birthday Wishes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset & Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f9fc; /* Very light, cool gray */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Main Container for the Card */
+        .birthday-card-container {
+            background: #ffffff; /* Pure white */
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft, elegant shadow */
+            max-width: 620px;
+            width: 90%;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideInLeft 0.9s ease-out forwards;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0; /* Subtle border */
+        }
+
+        /* Abstract background shapes */
+        .birthday-card-container::before,
+        .birthday-card-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07; /* Very subtle */
+            background: radial-gradient(#FFD700, #FFA500); /* Gold to Orange */
+            filter: blur(40px); /* Soft blur effect */
+        }
+
+        .birthday-card-container::before {
+            width: 150px;
+            height: 150px;
+            top: -60px;
+            right: -60px;
+            animation: pulseEffect 7s ease-in-out infinite alternate;
+        }
+
+        .birthday-card-container::after {
+            width: 100px;
+            height: 100px;
+            bottom: -40px;
+            left: -40px;
+            background: radial-gradient(#ADD8E6, #87CEEB); /* Light to Sky Blue */
+            animation: pulseEffect 9s ease-in-out infinite alternate-reverse;
+            animation-delay: 1.5s;
+        }
+
+        /* Main Heading */
+        .birthday-card h1 {
+            font-family: 'Lora', serif;
+            font-size: 3.8em; /* Grand and elegant */
+            color: #d4af37; /* Gold color */
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.03);
+            animation: fadeInDrop 1s ease-out forwards;
+        }
+
+        /* Sub-heading for the name */
+        .birthday-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.3em;
+            color: #333;
+            margin-bottom: 35px;
+            font-weight: 600;
+            animation: fadeInDrop 1s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        /* Main Message Paragraph */
+        .birthday-card p {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        /* Bible Verse Section */
+        .bible-verse-section {
+            background-color: #fffacd; /* Light goldenrod yellow */
+            border-left: 6px solid #d4af37; /* Matching gold accent */
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            animation: scaleIn 0.8s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .bible-verse-section h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.6em;
+            color: #d4af37;
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .bible-verse-section blockquote {
+            font-size: 1.15em;
+            font-style: italic;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .bible-verse-section cite {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: right;
+            font-weight: 400;
+        }
+
+        /* Footer/Sender Info */
+        .sender-info {
+            margin-top: 45px;
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .sender-info strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInDrop {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseEffect {
+            0% { transform: scale(1); opacity: 0.07; }
+            50% { transform: scale(1.05); opacity: 0.12; }
+            100% { transform: scale(1); opacity: 0.07; }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .birthday-card-container {
+                padding: 40px 25px;
+                border-radius: 10px;
+                border: none;
+            }
+            .birthday-card h1 {
+                font-size: 3em;
+            }
+            .birthday-card h2 {
+                font-size: 1.8em;
+            }
+            .birthday-card p {
+                font-size: 1em;
+            }
+            .bible-verse-section {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+            .bible-verse-section h3 {
+                font-size: 1.4em;
+            }
+            .bible-verse-section blockquote {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .birthday-card-container {
+                padding: 30px 15px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .birthday-card h1 {
+                font-size: 2.5em;
+            }
+            .birthday-card h2 {
+                font-size: 1.6em;
+            }
+            .birthday-card p {
+                font-size: 0.95em;
+            }
+            .bible-verse-section h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-card-container">
+        <div class="birthday-card">
+            <h1>Celebrating You!</h1>
+            <h2>Dearest {{NAME}},</h2>
+            <p>
+                On your birthday, the MACE Evangelical Union sends you abundant blessings and warm wishes. May your path be illuminated by God's wisdom, and may His grace guide you through every season of this new year. We are truly thankful for the gift of your presence in our community.
+            </p>
+
+            <div class="bible-verse-section">
+                <h3>A Light for Your Journey:</h3>
+                <blockquote>
+                    "For with you is the fountain of life; in your light we see light."
+                </blockquote>
+                <cite>— Psalm 36:9</cite>
+            </div>
+
+            <p>
+                May you continually find joy and purpose in His divine light.
+            </p>
+
+            <div class="sender-info">
+                With joyful hearts,<br>
+                The MACE Evangelical Union Team
+            </div>
+        </div>
+    </div>
+</body>
+</html>
