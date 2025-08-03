@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/indexpage/events.css">
     <link rel="stylesheet" href="styles/indexpage/join_us.css">
     <link rel="stylesheet" href="styles/indexpage/footer.css">
-    <link rel="stylesheet" href="announcement-model.css">
+    <link rel="stylesheet" href="styles/indexpage/announcement-modal.css">
 </head>
 <body>
 
@@ -61,8 +61,22 @@
                 </div>
             </div>
         </section>
-
         
+        <section id="upcoming-events" class="section-container category-section">
+            <h2 class="section-heading">Upcoming Events</h2>
+            <div class="upcoming-events-grid">
+                <div class="upcoming-event-card reveal-item">
+                    <img src="https://images.unsplash.com/photo-1594156641885-3b95a8820f4c" alt="Freshers Orientation Program" class="event-image">
+                    <div class="event-content">
+                        <i class="fas fa-book-reader icon-small"></i>
+                        <h3>Freshers Orientation Program</h3>
+                        <p class="event-status">October 2025</p>
+                        <p class="event-note">A warm welcome for all new students!</p>
+                        <a href="#" class="btn secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="join-us" class="section-container">
             <h2 class="section-title">Join Us</h2>
@@ -92,7 +106,7 @@
     
     <div id="announcement-modal" class="modal-overlay">
         <div class="modal-content">
-            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <button id="close-modal-btn" class="close-btn">×</button>
             <h2 class="modal-title">Latest Announcements</h2>
             <div class="announcement-list">
                 <div class="announcement-item">
@@ -108,7 +122,6 @@
         </div>
     </div>
     
-    <script src="/scripts/announcement.js"></script>
-    <script src="scripts.js"></script>
-</body>
+    <script src="scripts/announcement.js"></script>
+    <script src="scripts/index.js"></script> </body>
 </html>
