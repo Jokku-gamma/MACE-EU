@@ -1,6 +1,7 @@
-/* Hero Section */
+/* Hero Section with Animated Gradient Background */
 #hero-section {
-    background: url('https://images.unsplash.com/photo-1549449080-60586e3f43b6?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(135deg, #007bff, #00d2ff, #a0dfff);
+    background-size: 200% 200%;
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -8,24 +9,23 @@
     text-align: center;
     color: var(--light-color);
     position: relative;
-    overflow: hidden; /* To contain background animation */
+    overflow: hidden;
+    animation: gradientPan 15s ease infinite;
 }
 
 #hero-section::before {
     content: '';
     position: absolute;
-    top: -50px;
-    left: -50px;
-    width: calc(100% + 100px);
-    height: calc(100% + 100px);
-    background-color: rgba(0, 0, 0, 0.5);
-    animation: backgroundPan 30s linear infinite alternate;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay for better contrast with the gradient */
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    animation: none; /* Remove previous animation */
 }
 
 .hero-title {
@@ -63,7 +63,7 @@
     }
 }
 
-/* New animations for a more dynamic entrance */
+/* Animations remain the same, but I've added the new gradient animation below */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -95,11 +95,14 @@
     }
 }
 
-@keyframes backgroundPan {
+@keyframes gradientPan {
     0% {
-        transform: scale(1.1) translate(0, 0);
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
     }
     100% {
-        transform: scale(1.1) translate(-50px, -50px);
+        background-position: 0% 50%;
     }
 }

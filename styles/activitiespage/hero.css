@@ -1,6 +1,6 @@
-/* Events Hero Section */
+/* Activities Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(48, 145, 118, 0.6), rgba(53, 35, 48, 0.36)), url('https://images.unsplash.com/photo-1540206359-df6328325a74') no-repeat center center/cover;
+    background: linear-gradient(rgba(217, 83, 83, 0.6), rgba(72, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1549449080-60586e3f43b6') no-repeat center center/cover;
     color: var(--light-color);
     padding: 100px 20px;
     text-align: center;

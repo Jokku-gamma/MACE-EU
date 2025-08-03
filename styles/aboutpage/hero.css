@@ -1,6 +1,6 @@
 /* About Hero Section */
 .about-page-hero {
-    background: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 100, 200, 0.7)), url('https://images.unsplash.com/photo-1522204523234-8729aa6e9d52?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(69, 153, 236, 0.7), rgba(126, 6, 46, 0.7)), url('https://images.unsplash.com/photo-1522204523234-8729aa6e9d52?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
     color: var(--light-color);
     padding: 100px 20px;
     text-align: center;

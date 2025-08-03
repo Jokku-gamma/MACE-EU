@@ -3,114 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MACE EU - Activities</title> <meta name="description" content="Explore the diverse and enriching activities of MACE Evangelical Union (EU) on campus and beyond.">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/activities.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MACE EU - Activities</title>
+    <meta name="description" content="Explore the diverse and enriching activities of MACE Evangelical Union (EU) on campus and beyond.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujlYk+o/l3z3wz+d/4g+5R+V3J8Q/d5k+J6u5Z5B9w5z5h5z5q5z5p5q5z5r5z5o5z5z5h5h5p5h5" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/activitiespage/global.css">
+    <link rel="stylesheet" href="styles/activitiespage/header.css">
+    <link rel="stylesheet" href="styles/activitiespage/hero.css">
+    <link rel="stylesheet" href="styles/activitiespage/activities.css">
+    <link rel="stylesheet" href="styles/activitiespage/footer.css">
+    <link rel="stylesheet" href="announcement-model.css">
 </head>
 <body>
 
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-title">
-                <a href="index.html" class="logo-link">
-                    <!-- <img src="images/eu.png" alt="MACE EU Logo" class="header-logo"> -->
-                    <h1>MACE EU</h1>
-                </a>
-            </div>
+        <div class="header-container">
+            <a href="index.html" class="logo">MACE EU</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="activities.html" class="active">Activities</a></li>
-                    <li><a href="events.html">Events</a></li> <li><a href="contact.html">Contact Us</a></li>
+                    <li><button id="open-announcements-btn" class="nav-link">Announcements</button></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="activities.html" class="nav-link active">Activities</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="page-intro" class="section container intro-section">
-            <h2 class="section-heading"><span>Our Activities</span></h2> <p class="intro-text">
+        <section id="activities-hero" class="section-container hero-section">
+            <h1 class="hero-title">Our Activities</h1>
+            <p class="hero-subtitle">
                 At MACE EU, our vibrant community thrives through a variety of engaging and enriching activities designed for spiritual growth, fellowship, and outreach. Discover how you can connect and participate!
             </p>
         </section>
 
-        <section id="all-activities" class="section container category-section"> <h2 class="section-sub-heading"><span>Explore Our Activities</span></h2> <div class="activity-card-container">
-                <div class="activity-card reveal-item">
-                    <div class="activity-text">
-                        <i class="fas fa-users-line icon-small"></i>
-                        <h3>SGMM (Student-Graduate Monthly Meetup)</h3>
-                        <p>Students and graduates meet up once every month for praying for our campus, planning new events, sharing testimonies, and fostering mentorship relationships. It's a vital time for connection and strategic prayer.</p>
-                    </div>
-                    <div class="activity-image">
-                        <img src="images/Sgmm.jpeg" alt="Student Graduate Monthly Meetup">
-                    </div>
-                </div>
+        <section id="all-activities" class="section-container content-section">
+            <h2 class="section-heading">Explore Our Activities</h2>
+            <div class="activity-list">
+                
 
                 <div class="activity-card reveal-item reverse-layout">
                     <div class="activity-text">
-                        <i class="fas fa-campground icon-small"></i>
+                        <i class="fas fa-campground icon"></i>
                         <h3>Home Camp</h3>
                         <p>Students stay together in a graduate's house as their own home. During these immersive camps, we deepen our faith through intensive prayer for the campus, enjoy fellowship, cook meals together, and share life-transforming experiences.</p>
                     </div>
-                    <div class="activity-image">
-                        <img src="images/Home.jpg" alt="Home Camps">
+                    <div class="activity-image-container">
+                        <img src="images/home1.jpg" alt="Home Camps" class="activity-image">
                     </div>
                 </div>
 
                 <div class="activity-card reveal-item">
                     <div class="activity-text">
-                        <i class="fas fa-book-bible icon-small"></i>
+                        <i class="fas fa-book-bible icon"></i>
                         <h3>Weekly Bible Studies</h3>
                         <p>Engage in deep discussions and grow in faith through our regular Bible study sessions, held both on campus and online. We delve into scripture, share insights, and apply biblical principles to our daily lives.</p>
                     </div>
-                    <div class="activity-image">
-                        <img src="images/bible_study.jpg" alt="Weekly Bible Studies">
+                    <div class="activity-image-container">
+                        <img src="images/bible_study.jpg" alt="Weekly Bible Studies" class="activity-image">
                     </div>
                 </div>
 
                 <div class="activity-card reveal-item reverse-layout">
                     <div class="activity-text">
-                        <i class="fas fa-hands-praying icon-small"></i>
-                        <h3>Prayer Meetings</h3>
-                        <p>Come together to pray for our campus, personal needs, and global concerns in a supportive and uplifting environment. These gatherings strengthen our communal bond and deepen our reliance on God.</p>
+                        <i class="fas fa-hands-praying icon"></i>
+                        <h3>Campus Hangouts</h3>
+                        <p>Whether at local shops, cafés, or during travel, we create joyful moments of fellowship. These casual meetups give us space to relax, share stories, and grow in friendship beyond formal gatherings.</p>
                     </div>
-                    <div class="activity-image">
-                        <img src="images/prayer.jpeg" alt="Prayer Meetings">
-                    </div>
-                </div>
-
-                <div class="activity-card reveal-item">
-                    <div class="activity-text">
-                        <i class="fas fa-handshake-angle icon-small"></i>
-                        <h3>Fellowship Gatherings</h3>
-                        <p>Build meaningful relationships through our regular fellowship events, outings, and small group discussions. We share joy, support each other, and grow together in a loving community.</p>
-                    </div>
-                    <div class="activity-image">
-                        <img src="images/worship.jpeg" alt="Fellowship Gatherings">
-                    </div>
-                </div>
-
-                <div class="activity-card reveal-item reverse-layout">
-                    <div class="activity-text">
-                        <i class="fas fa-users icon-small"></i>
-                        <h3>Mini Prayer Cell (MPC)</h3>
-                        <p>Each student is connected with a graduate for sharing their worries, prayer requests, and life updates in a confidential and supportive setting. MPCs provide personalized mentorship and accountability.</p>
-                    </div>
-                    <div class="activity-image">
-                        <img src="images/mpc.jpeg" alt="Mini Prayer Cell">
+                    <div class="activity-image-container">
+                        <img src="images/campus_hangouts.jpg" alt="Prayer Meetings" class="activity-image">
                     </div>
                 </div>
 
                 <div class="activity-card reveal-item">
                     <div class="activity-text">
-                        <i class="fas fa-shoe-prints icon-small"></i>
+                        <i class="fas fa-users-line icon"></i>
+                        <h3>Prayer Vigil</h3>
+                        <p>Once a month, on a Friday evening, we gather at a graduate’s home to pray for our college and students.</p>
+                    </div>
+                    <div class="activity-image-container">
+                        <img src="images/sgmm.jpg" alt="Student Graduate Monthly Meetup" class="activity-image">
+                    </div>
+                </div>
+                
+
+                <div class="activity-card reveal-item">
+                    <div class="activity-text">
+                        <i class="fas fa-shoe-prints icon"></i>
                         <h3>Prayer Walk</h3>
                         <p>Students walk through the campus, praying specifically for the campus environment, the faculty, the staff, and their fellow students. It's a powerful way to intercede for our academic community.</p>
                     </div>
-                    <div class="activity-image">
-                        <img src="images/prayerwalk.jpeg" alt="Prayer Walk">
+                    <div class="activity-image-container">
+                        <img src="images/prayer_walk.jpg" alt="Prayer Walk" class="activity-image">
                     </div>
                 </div>
             </div>
@@ -118,38 +108,56 @@
 
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
             <p>© 2024 MACE Evangelical Union. All Rights Reserved.</p>
-            <p class="footer-verse">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
-            <p class="footer-contact">Email: <a href="mailto:maceeu07@gmail.com">maceeu07@gmail.com</a></p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('.reveal-item');
-
-            const observerOptions = {
-                root: null, // viewport
-                rootMargin: '0px',
-                threshold: 0.1 // 10% of item visible to trigger
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-revealed');
-                        observer.unobserve(entry.target); // Stop observing once revealed
-                    }
-                });
-            }, observerOptions);
-
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
-
+    <div id="announcement-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">×</button>
+            <h2 class="modal-title">Latest Announcements</h2>
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> August 2, 2025</p>
+                    <p class="announcement-text">Welcome to the new MACE EU website! Explore our new look and discover our upcoming events and activities.</p>
+                </div>
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> July 28, 2025</p>
+                    <p class="announcement-text">Regular Bible Study Meeting on Wednesday</p>
+                </div>
+            </div>
+            <a href="announcement.html" class="btn primary-btn full-width-btn">View All Announcements</a>
+        </div>
+    </div>
+    
+    <script src="scripts/announcement.js"></script>
+    <div id="announcement-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">×</button>
+            <h2 class="modal-title">Latest Announcements</h2>
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> August 2, 2025</p>
+                    <p class="announcement-text">Welcome to the new MACE EU website! Explore our new look and discover our upcoming events and activities.</p>
+                </div>
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> July 28, 2025</p>
+                    <p class="announcement-text">Regular Bible Study Meeting on Wednesday</p>
+                </div>
+            </div>
+            <a href="announcement.html" class="btn primary-btn full-width-btn">View All Announcements</a>
+        </div>
+    </div>
+    
+    <script src="scripts/announcement.js"></script>
+    <script src="scripts/activities.js"></script>
 </body>
 </html>
