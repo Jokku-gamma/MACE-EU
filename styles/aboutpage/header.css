@@ -1,0 +1,90 @@
+/* Header */
+.main-header {
+    background-color: var(--light-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+/* Styling for the Announcements button in the navigation bar */
+#open-announcements-btn {
+    /* Reset default button styles */
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; /* In case it inherits link styling */
+}
+
+/* Hover and focus effects for the button */
+
+#open-announcements-btn:focus {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* To ensure button alignment with other nav links */
+.main-nav ul {
+    align-items: center;
+}

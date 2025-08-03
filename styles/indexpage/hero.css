@@ -1,0 +1,105 @@
+/* Hero Section */
+#hero-section {
+    background: url('https://images.unsplash.com/photo-1549449080-60586e3f43b6?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);
+    position: relative;
+    overflow: hidden; /* To contain background animation */
+}
+
+#hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: backgroundPan 30s linear infinite alternate;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: none; /* Remove previous animation */
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    animation: fadeInDown 1.5s ease-in-out forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    animation: fadeInUp 1.8s ease-in-out forwards;
+}
+
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 2.1s ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* New animations for a more dynamic entrance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundPan {
+    0% {
+        transform: scale(1.1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1.1) translate(-50px, -50px);
+    }
+}

@@ -1,0 +1,84 @@
+/* Our Aims Section - New Beautiful Design */
+#our-aims {
+    background-color: var(--secondary-color);
+    padding: 80px 20px;
+}
+
+/* Updated Section Title for more visual impact */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    position: relative;
+    color: var(--dark-color);
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-color), #0056b3);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Grid for Vision and Mission Cards */
+.aims-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.purpose-card {
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.purpose-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.purpose-heading {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.purpose-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Unique styling for each card with gradients */
+.vision {
+    background: linear-gradient(45deg, #e0f2fe, #b3e0ff);
+    color: #004085;
+}
+
+.mission {
+    background: linear-gradient(45deg, #e6ffed, #b3e6c3);
+    color: #0c5460;
+}
+
+.vision .purpose-heading,
+.mission .purpose-heading {
+    color: inherit; /* Ensures heading color matches card's text color */
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+    .aims-grid {
+        grid-template-columns: 1fr;
+    }
+}

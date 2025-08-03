@@ -4,82 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MACE Evangelical Union (EU) - About Us</title>
-    <!-- Import Google Fonts for attractive headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Link to the specific CSS file for this page -->
-    <link rel="stylesheet" href="styles/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujlYk+o/l3z3wz+d/4g+5R+V3J8Q/d5k+J6u5Z5B9w5z5h5z5q5z5p5q5z5r5z5o5z5z5h5h5p5h5" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Modular Stylesheets for About Us Page -->
+    <link rel="stylesheet" href="styles/aboutpage/global.css">
+    <link rel="stylesheet" href="styles/aboutpage/header.css">
+    <link rel="stylesheet" href="styles/aboutpage/hero.css">
+    <link rel="stylesheet" href="styles/aboutpage/story.css">
+    <link rel="stylesheet" href="styles/aboutpage/aims.css">
+    <link rel="stylesheet" href="styles/aboutpage/footer.css">
+        <link rel="stylesheet" href="announcement-model.css">
+
 </head>
 <body>
 
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-title">
-                <a href="index.html" class="logo-link">
-                    
-                    <h1>MACE EU</h1>
-                </a>
-            </div>
+        <div class="header-container">
+            <a href="index.html" class="logo">MACE EU</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li> <!-- 'active' class for About Us page -->
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><button id="open-announcements-btn" class="nav-link">Announcements</button></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="activities.html" class="nav-link">Activities</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="about-hero" class="section container about-page-hero">
-            <h2 class="section-heading"><span>Who We Are</span></h2>
+        <section id="about-hero" class="section-container about-page-hero">
+            <h1 class="hero-title">Who We Are</h1>
             <p class="hero-intro-text">
                 Welcome to MACE Evangelical Union, a fellowship committed to fostering spiritual growth and vibrant community among college students.
             </p>
         </section>
 
-        <section id="our-story" class="section container content-block">
-            <h3 class="content-heading">Our Story</h3>
-            <p>
-                The MACE Evangelical Union (EU) is a Christ-centered student fellowship dedicated to nurturing college students in their faith journey while enriching their campus experience. Born from a vision to see students transformed by Christ, we have been a vibrant spiritual home on campus for many years. We are a community where students can connect, grow, and serve, building a foundation of faith that lasts a lifetime.
-            </p>
-            <p>
-                From humble beginnings, MACE EU has grown through dedicated prayer, faithful Bible study, and genuine fellowship. We believe in creating a welcoming environment where every student feels valued and can explore their faith freely. Our journey is one of continuous growth, guided by God's Word and the Holy Spirit.
-            </p>
+        <section id="our-story" class="section-container content-block">
+            <h2 class="section-heading">Our Story</h2>
+            <div class="content-wrapper">
+                <p>
+                    The MACE Evangelical Union (EU) is a Christ-centered student fellowship dedicated to nurturing college students in their faith journey while enriching their campus experience. Born from a vision to see students transformed by Christ, we have been a vibrant spiritual home on campus for many years. We are a community where students can connect, grow, and serve, building a foundation of faith that lasts a lifetime.
+                </p>
+                <p>
+                    From humble beginnings, MACE EU has grown through dedicated prayer, faithful Bible study, and genuine fellowship. We believe in creating a welcoming environment where every student feels valued and can explore their faith freely. Our journey is one of continuous growth, guided by God's Word and the Holy Spirit.
+                </p>
+            </div>
         </section>
 
-        <section id="our-beliefs" class="section container content-block">
-            <h3 class="content-heading">What We Believe</h3>
-            <p>
-                At the core of MACE EU is a commitment to the foundational truths of Christianity. We believe in the authority of the Holy Bible as the inspired Word of God, the deity of Jesus Christ, His atoning death and resurrection, and salvation by grace through faith. We aim to equip students to understand, articulate, and live out these truths in their daily lives.
-            </p>
-            <p>
-                Our fellowship emphasizes personal discipleship, evangelism, and a life of worship. We encourage students to develop a deep personal relationship with Jesus, to share their faith with others on campus, and to live in a way that honors God in all their endeavors.
-            </p>
+        <section id="our-aims-section" class="section-container">
+            <h2 class="section-heading">Our Aims</h2>
+            <div class="aims-grid">
+                <div class="aim-card">
+                    <i class="fas fa-bullhorn aim-icon"></i>
+                    <h3 class="aim-heading">Evangelism</h3>
+                    <p class="aim-text">UESI aims to share the message of Jesus Christ with post-matric students in India, leading them to a personal experience of salvation through faith in Him.</p>
+                </div>
+                <div class="aim-card">
+                    <i class="fas fa-bible aim-icon"></i>
+                    <h3 class="aim-heading">Discipleship</h3>
+                    <p class="aim-text">UESI focuses on nurturing students, helping them grow in their faith and become followers of Jesus Christ. This involves providing resources, support, and opportunities for spiritual growth.</p>
+                </div>
+                <div class="aim-card">
+                    <i class="fas fa-church aim-icon"></i>
+                    <h3 class="aim-heading">Christian Testimony</h3>
+                    <p class="aim-text">UESI encourages students to live out their faith authentically and to be a positive influence on their campuses, demonstrating Christian values and principles.</p>
+                </div>
+                <div class="aim-card">
+                    <i class="fas fa-globe aim-icon"></i>
+                    <h3 class="aim-heading">God's Mission</h3>
+                    <p class="aim-text">UESI helps students understand God's global mission and how they can participate in it, whether through local church involvement or through global missions.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="our-affiliation" class="section container content-block">
-            <h3 class="content-heading">Our Affiliation</h3>
-            <p>
-                MACE EU is proudly affiliated with the Union of Evangelical Students of India (UESI). UESI is a nationwide movement dedicated to evangelizing post-matric students across India and nurturing them as devoted disciples of Jesus Christ. This affiliation connects us to a larger network of student fellowships, providing resources, training, and a broader vision for impacting the nation for Christ.
-            </p>
-            <p>
-                Being part of UESI strengthens our mission, allowing us to participate in national events, leadership development programs, and inter-collegiate initiatives, all aimed at building God's Kingdom through students.
-            </p>
+        <section id="our-affiliation" class="section-container content-block">
+            <h2 class="section-heading">Our Affiliation</h2>
+            <div class="content-wrapper">
+                <p>
+                    MACE EU is proudly affiliated with the Union of Evangelical Students of India (UESI). UESI is a nationwide movement dedicated to evangelizing post-matric students across India and nurturing them as devoted disciples of Jesus Christ. This affiliation connects us to a larger network of student fellowships, providing resources, training, and a broader vision for impacting the nation for Christ.
+                </p>
+                <p>
+                    Being part of UESI strengthens our mission, allowing us to participate in national events, leadership development programs, and inter-collegiate initiatives, all aimed at building God's Kingdom through students.
+                </p>
+            </div>
         </section>
-
-        <!-- You can add more sections like "Our Values", "Testimonies", "Our Team" etc. -->
-
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
             <p>© 2025 MACE Evangelical Union. All Rights Reserved.</p>
-            <p class="footer-verse">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
-            <p class="footer-contact">Email: <a href="mailto:maceeu07@gmail.com">maceeu07@gmail.com</a></p>
         </div>
     </footer>
 
+
+    <div id="announcement-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn">&times;</button>
+            <h2 class="modal-title">Latest Announcements</h2>
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> August 2, 2025</p>
+                    <p class="announcement-text">Welcome to the new MACE EU website! Explore our new look and discover our upcoming events and activities.</p>
+                </div>
+                <div class="announcement-item">
+                    <p class="announcement-date"><strong>Date:</strong> July 28, 2025</p>
+                    <p class="announcement-text">Regular Bible Study Meeting on Wednesday</p>
+                </div>
+            </div>
+            <a href="announcement.html" class="btn primary-btn full-width-btn">View All Announcements</a>
+        </div>
+    </div>
+    
+    <script src="/scripts/announcement.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+/* About Hero Section */
+.about-page-hero {
+    background: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 100, 200, 0.7)), url('https://images.unsplash.com/photo-1522204523234-8729aa6e9d52?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+    color: var(--light-color);
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.about-page-hero:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.about-page-hero .hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.about-page-hero .hero-intro-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Animations for a more dynamic entrance */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

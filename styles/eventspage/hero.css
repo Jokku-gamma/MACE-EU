@@ -1,0 +1,45 @@
+/* Events Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1540206359-df6328325a74') no-repeat center center/cover;
+    color: var(--light-color);
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

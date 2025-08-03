@@ -1,0 +1,64 @@
+/* Upcoming Events Section */
+#upcoming-events {
+    background-color: var(--light-color);
+    padding: 60px 20px;
+}
+
+.event-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.event-slider::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.event-card {
+    min-width: 300px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.event-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.event-date, .event-location {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.event-date i, .event-location i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.view-all-btn {
+    margin-top: 30px;
+}

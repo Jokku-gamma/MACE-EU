@@ -1,0 +1,13 @@
+/* Our Story Section */
+#our-story {
+    background-color: var(--light-color);
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center; /* This centers the heading and the line */
+}
+
+/* You might want to keep the paragraph text left-aligned for readability */
+#our-story .content-wrapper {
+    text-align: left;
+}
