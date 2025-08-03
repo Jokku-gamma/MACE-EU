@@ -1,33 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('announcement-modal');
-    const closeBtn = document.getElementById('close-modal-btn');
-    const openBtn = document.getElementById('open-announcements-btn');
+    const announcementsContainer = document.getElementById('announcements-container');
+    const announcementFiles = [
+        'announcements/sgmm1.html',
+        'announcements/weekly.html',
+    ];
 
-    // Check if the modal has been shown in this session
-    const hasShown = sessionStorage.getItem('announcementModalShown');
-
-    if (!hasShown) {
-        modal.classList.add('active');
-        sessionStorage.setItem('announcementModalShown', 'true');
+    async function loadAnnouncements() {
+        for (const file of announcementFiles) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} for ${file}`);
+                }
+                const htmlContent = await response.text();
+                announcementsContainer.insertAdjacentHTML('beforeend', htmlContent);
+            } catch (error) {
+                console.error('Error loading announcement:', error);
+            }
+        }
+        applyRevealEffect();
     }
 
-    // Close the modal when the close button is clicked
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
+    function applyRevealEffect() {
+        const revealElements = document.querySelectorAll('.announcement-item');
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of item visible to trigger
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
 
-    // Open the modal manually with the header button
-    openBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-    });
-
-    // Close the modal if the user clicks outside of it
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
+    loadAnnouncements();
 });
-
-
-

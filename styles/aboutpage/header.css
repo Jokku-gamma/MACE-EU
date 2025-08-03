@@ -60,9 +60,43 @@
 .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
 }
+
+.notification-bell {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Media Queries for Header */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .main-nav li {
+        margin: 0 10px 10px;
+    }
+}
+
+
 /* Styling for the Announcements button in the navigation bar */
 #open-announcements-btn {
-    /* Reset default button styles */
     background-color: transparent;
     border: 2px solid var(--primary-color);
     padding: 8px 16px;
@@ -72,11 +106,11 @@
     color: var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none; /* In case it inherits link styling */
+    text-decoration: none;
 }
 
 /* Hover and focus effects for the button */
-
+#open-announcements-btn:hover,
 #open-announcements-btn:focus {
     background-color: var(--primary-color);
     color: var(--light-color);

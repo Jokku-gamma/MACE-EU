@@ -60,3 +60,47 @@
 .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
 }
+
+/* Styling for the Announcements button in the navigation bar */
+#open-announcements-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover and focus effects for the button */
+#open-announcements-btn:hover,
+#open-announcements-btn:focus {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+/* To ensure button alignment with other nav links */
+.main-nav ul {
+    align-items: center;
+}
+
+/* Media Queries for Header */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .main-nav li {
+        margin: 0 10px 10px;
+    }
+}

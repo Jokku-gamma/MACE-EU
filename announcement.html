@@ -4,94 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MACE EU - All Announcements</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght=700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40JuKCpsKzHV2hLxXllQp7EVJbF+R4qRjF+m4N5FqfK4Cq7LpXh9gP/C7A3k7Z/m1s1+k7p4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles/index_styles.css">
-    <link rel="stylesheet" href="styles/announcement.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujlYk+o/l3z3wz+d/4g+5R+V3J8Q/d5k+J6u5Z5B9w5z5h5z5q5z5p5q5z5r5z5o5z5z5h5h5p5h5" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/announcementpage/global.css">
+    <link rel="stylesheet" href="styles/announcementpage/header.css">
+    <link rel="stylesheet" href="styles/announcementpage/hero.css">
+    <link rel="stylesheet" href="styles/announcementpage/announcement.css">
+    <link rel="stylesheet" href="styles/announcementpage/footer.css">
 </head>
 <body>
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-title">
-                <a href="index.html" class="logo-link">
-                    <!--<img src="images/eu.png" alt="MACE EU Logo" class="header-logo">-->
-                    <h1>MACE EU</h1>
-                </a>
-            </div>
+        <div class="header-container">
+            <a href="index.html" class="logo">MACE EU</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="activities.html">Activities</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#" class="nav-link active">Announcements</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="activities.html" class="nav-link">Activities</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container announcement-page-main">
-        <section id="all-announcements" class="section">
-            <h2 class="section-heading"><span>All Announcements</span></h2>
+    <main>
+        <section id="announcements-hero" class="section-container hero-section">
+            <h1 class="hero-title">All Announcements</h1>
+            <p class="hero-subtitle">
+                Stay updated with the latest news, events, and important information from our community.
+            </p>
+        </section>
+
+        <section id="all-announcements" class="section-container content-section">
+            <h2 class="section-heading">Recent Updates</h2>
             <div class="announcements-list-full" id="announcements-container">
                 </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
             <p>© 2025 MACE Evangelical Union. All Rights Reserved.</p>
-            <p class="footer-verse">"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</p>
-            <p class="footer-contact">Email: <a href="mailto:maceeu07@gmail.com">maceeu07@gmail.com</a></p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const announcementsContainer = document.getElementById('announcements-container');
-            const announcementFiles = [
-                'announcements/sgmm1.html',
-                'announcements/weekly.html',
-            ];
-
-            async function loadAnnouncements() {
-                for (const file of announcementFiles) {
-                    try {
-                        const response = await fetch(file);
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status} for ${file}`);
-                        }
-                        const htmlContent = await response.text();
-                        announcementsContainer.insertAdjacentHTML('beforeend', htmlContent);
-                    } catch (error) {
-                        console.error('Error loading announcement:', error);
-                    }
-                }
-                applyRevealEffect(); // Apply the reveal effect after all announcements are loaded
-            }
-
-            function applyRevealEffect() {
-                const revealElements = document.querySelectorAll('.reveal-item');
-                const observerOptions = {
-                    root: null, // viewport
-                    rootMargin: '0px',
-                    threshold: 0.1 // 10% of item visible to trigger
-                };
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-revealed');
-                            observer.unobserve(entry.target); // Stop observing once revealed
-                        }
-                    });
-                }, observerOptions);
-                revealElements.forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
-            loadAnnouncements();
-        });
-    </script>
+    
+    <script src="scripts/announcement.js"></script>
 </body>
 </html>

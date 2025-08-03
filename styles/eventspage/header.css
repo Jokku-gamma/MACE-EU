@@ -63,7 +63,6 @@
 
 /* Styling for the Announcements button in the navigation bar */
 #open-announcements-btn {
-    /* Reset default button styles */
     background-color: transparent;
     border: 2px solid var(--primary-color);
     padding: 8px 16px;
@@ -73,7 +72,7 @@
     color: var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none; /* In case it inherits link styling */
+    text-decoration: none;
 }
 
 /* Hover and focus effects for the button */
@@ -88,4 +87,20 @@
 /* To ensure button alignment with other nav links */
 .main-nav ul {
     align-items: center;
+}
+
+/* Media Queries for Header */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .main-nav li {
+        margin: 0 10px 10px;
+    }
 }
