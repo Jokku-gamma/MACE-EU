@@ -1,0 +1,153 @@
+/* File: styles/aware.css */
+
+#aware-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    min-height: 70vh;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #666;
+    margin-bottom: 3rem;
+    margin-top: -1.5rem;
+}
+
+#awares-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.aware-item-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* This is important for new layout */
+}
+
+.aware-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* --- New Card Content Styles --- */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Makes card content fill the space */
+}
+
+.file-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 0.5rem 0; /* Updated margin */
+}
+
+.file-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0; /* Updated margin */
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+
+/* --- PDF Card Style --- */
+.pdf-card {
+    text-align: center;
+}
+
+.pdf-card .icon-container {
+    font-size: 4rem;
+    color: #e63946; /* PDF red */
+    padding-top: 2rem; /* Add padding above icon */
+    margin-bottom: 1rem;
+}
+
+.pdf-card .card-content {
+    text-align: center;
+}
+
+.pdf-card .download-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: auto; /* Pushes button to the bottom */
+}
+.pdf-card .download-btn .fas {
+    margin-right: 8px;
+}
+
+/* --- Image Card Style --- */
+.image-card {
+    cursor: pointer;
+}
+
+.aware-image-thumbnail {
+    width: 100%;
+    height: 200px; /* You can adjust this height */
+    object-fit: cover;
+    display: block;
+}
+
+.image-card .card-content {
+    /* Content is just title and description */
+}
+
+
+/* --- Image Modal (Lightbox) Style --- */
+.image-modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.image-modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.image-modal-close-btn:hover,
+.image-modal-close-btn:focus {
+    color: #bbb;
+}
+
+/* --- Error/Loading Messages --- */
+.error-message, #loading-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    grid-column: 1 / -1; /* Span full grid */
+}
