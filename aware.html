@@ -73,8 +73,10 @@
             const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
             const pdfExtensions = ['.pdf'];
 
-            // Use fetch to load the JSON file
-            fetch('awares.json')
+            // Use fetch to load the JSON file, ensuring it's not cached
+            fetch('awares.json', { 
+                cache: 'no-store'  // <-- This line prevents caching
+            })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -85,7 +87,8 @@
                     loadingMessage.style.display = 'none'; // Hide loading message
 
                     if (!items || items.length === 0) {
-                        container.innerHTML = `<p>No resources found. (Update scripts/awares_list.json to add files.)</p>`;
+                        // Updated error message to point to the correct file
+                        container.innerHTML = `<p>No resources found. (Update awares.json to add files.)</p>`;
                         return;
                     }
 
@@ -134,7 +137,8 @@
                 .catch(error => {
                     console.error('Error fetching awares list:', error);
                     loadingMessage.style.display = 'none';
-                    container.innerHTML = `<p class="error-message">Failed to load resources. Could not find scripts/awares_list.json.</p>`;
+                    // Updated error message
+                    container.innerHTML = `<p class="error-message">Failed to load resources. Could not find awares.json.</p>`;
                 });
 
             // --- Modal Controls ---
