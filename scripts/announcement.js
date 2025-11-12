@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const announcementsContainer = document.getElementById('announcements-container');
     const announcementFiles = [
-        'announcements/sgmm1.html',
         'announcements/weekly.html',
+        ''
     ];
 
     async function loadAnnouncements() {

@@ -1,0 +1,32 @@
+/* styles/songbook.css */
+
+#songbook-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    min-height: 60vh; /* Ensures footer isn't too high on a short page */
+}
+
+.songbook-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.songbook-content p {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.download-btn {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    margin-top: 1rem;
+}
+
+.download-btn .fa-android {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
