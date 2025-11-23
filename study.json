@@ -16,5 +16,14 @@
         "title": "Test1",
         "summary": "Test1",
         "members": "Test1"
+    },
+    {
+        "date": "2025-11-12",
+        "date_display": "November 12, 2025",
+        "speaker": "Test2",
+        "portion": "Test2",
+        "title": "tEST2",
+        "summary": "Test2",
+        "members": "Test2"
     }
 ]
