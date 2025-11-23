@@ -1,4 +1,4 @@
-// scripts/study.js - FULLY UPDATED AND CLEANED UP
+// scripts/study.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const summariesList = document.getElementById('summaries-list');
@@ -7,10 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal-btn');
 
     // --- Modal Handlers ---
-
-    /**
-     * Shows the modal and populates it with the study data.
-     */
     function showModal(study) {
         const formattedSummary = formatSummaryText(study.summary);
         
@@ -34,15 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
     }
 
-    /**
-     * Hides the modal.
-     */
     function hideModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
     }
     
-    // Add event listeners for closing the modal
     closeModalBtn.addEventListener('click', hideModal);
     
     modal.addEventListener('click', (e) => {
@@ -52,38 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Summary Formatting ---
-
-    /**
-     * Converts plain text with basic newlines and **bold** formatting into HTML paragraphs.
-     */
     function formatSummaryText(text) {
         if (!text) return '';
-        
         let html = text;
-
-        // 1. Convert **Bold** into <strong> Bold </strong>
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-        // 2. Convert double newlines (new paragraph) into closing/opening paragraph tags
         html = html.replace(/(\r\n|\r|\n){2,}/g, '</p><p>');
-
-        // 3. Convert single newlines (line break) into <br> tags
         html = html.replace(/(\r\n|\r|\n)/g, '<br>');
-
-        // 4. Wrap the whole thing in a div and starting <p> tag
         return `<div class="content-wrapper"><p>${html}</p></div>`;
     }
 
     // --- Summary Card Creation ---
-
-    /**
-     * Creates an HTML card element with minimal information for the tile view.
-     */
     function createSummaryCard(study) {
         const card = document.createElement('div');
         card.className = 'summary-card';
         
-        // Direct access to new fields: portion and title
         const portion = study.portion || 'N/A';
         const title = study.title || 'No Title';
 
@@ -105,11 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return card;
     }
 
-    // --- Data Loading ---
-
+    // --- Data Loading (Updated for No-Cache) ---
     async function loadSummaries() {
         try {
-            const response = await fetch('study.json'); 
+            // FIXED: Added timestamp to URL to prevent caching
+            const noCacheUrl = `study.json?t=${new Date().getTime()}`;
+            
+            const response = await fetch(noCacheUrl, {
+                cache: "no-store" // Explicitly tell fetch not to cache
+            }); 
             
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
@@ -132,6 +110,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Start the loading process
     loadSummaries();
 });
