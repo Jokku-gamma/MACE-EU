@@ -1,5 +1,16 @@
 [
   {
+    "id": "963eae78-9fae-488f-af69-e04f1cd35582",
+    "title": "Test1",
+    "author": "Jokku",
+    "date": "Dec 07, 2025",
+    "type": "article",
+    "banner": "https://images.unsplash.com/photo-1504052434569-70ad5836ab65",
+    "content": "Test Writeup",
+    "mediaType": "none",
+    "mediaUrl": ""
+  },
+  {
     "id": "gospel-meaning",
     "title": "What is the Gospel?",
     "author": "Joel",
