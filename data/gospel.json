@@ -1,5 +1,16 @@
 [
   {
+    "id": "71720dac-db11-4143-ab8e-14d3d258c608",
+    "title": "image test 2",
+    "author": "jokku",
+    "date": "Dec 08, 2025",
+    "type": "image",
+    "banner": "https://images.unsplash.com/photo-1504052434569-70ad5836ab65",
+    "content": "image test 2",
+    "mediaType": "image",
+    "mediaUrl": "https://jokku-gamma.github.io/MACE-EU/gospel-uploads/b7db79a3d06a4d48b24cb50ba596da96.jpg"
+  },
+  {
     "id": "0a0bbaf4-a79f-4b00-89cb-875a1a4edd80",
     "title": "Image test 2",
     "author": "Jokku",
