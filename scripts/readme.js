@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CACHE BUSTER STRATEGY ---
     // We add ?v=TIMESTAMP to the URL.
     // This makes every request unique, so the browser CANNOT use the old cached version.
-    const jsonUrl = `gospel.json?v=${new Date().getTime()}`;
+    const jsonUrl = `./gospel.json?v=${new Date().getTime()}`;
 
     // 1. Fetch the data with headers to forbid caching
     fetch(jsonUrl, { 
