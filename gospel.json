@@ -1,16 +1,5 @@
 [
   {
-    "id": "6d2af0ce-4aeb-4848-958b-de234d4e1863",
-    "title": "Image with Banner test 4",
-    "author": "tester 4",
-    "date": "Dec 11, 2025",
-    "type": "image",
-    "banner": "https://jokku-gamma.github.io/MACE-EU/gospel-uploads/3a27fe137492408d9533e866338f3aee.png",
-    "content": "image with banner test 4 by tester 4",
-    "mediaType": "image",
-    "mediaUrl": "https://jokku-gamma.github.io/MACE-EU/gospel-uploads/3a27fe137492408d9533e866338f3aee.png"
-  },
-  {
     "id": "9eb39bf9-476f-4b81-8b8e-532aafbb6395",
     "title": "Youtube test 3",
     "author": "tester 3",
