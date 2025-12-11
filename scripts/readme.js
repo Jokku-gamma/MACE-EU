@@ -3,11 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleContainer = document.getElementById('article-container');
 
     // --- CACHE BUSTER STRATEGY ---
-    // We add ?v=TIMESTAMP to the URL.
-    // This makes every request unique, so the browser CANNOT use the old cached version.
     const jsonUrl = `./gospel.json?v=${new Date().getTime()}`;
 
-    // 1. Fetch the data with headers to forbid caching
     fetch(jsonUrl, { 
         cache: "no-store",
         headers: {
@@ -20,16 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return response.json();
     })
     .then(data => {
-        // Determine which page we are on
         if (articleContainer && window.location.search.includes('id=')) {
-            // If URL has ?id=..., we are in "View Mode" (assuming you reused the layout)
-            // Or if you are using readme-view.html, check for that ID there.
-            // Based on your previous code, this logic handles both scenarios if IDs exist.
             if (document.getElementById('article-container')) {
-                 // Check if we are meant to be viewing an article
                  const params = new URLSearchParams(window.location.search);
                  if(params.get('id')) {
-                     if(grid) grid.style.display = 'none'; // Hide grid if showing article
+                     if(grid) grid.style.display = 'none'; 
                      loadArticle(data);
                  } else if (grid) {
                      renderGrid(data);
@@ -44,6 +36,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (grid) grid.innerHTML = `<p style="text-align:center; color:red;">Error loading content. Please try again later.</p>`;
     });
 });
+
+// --- HELPER: Fixes YouTube Links for Iframes ---
+function getYoutubeEmbedUrl(url) {
+    if (!url) return '';
+    let videoId = '';
+    
+    // Handle standard "watch?v=" URLs
+    if (url.includes('youtube.com/watch?v=')) {
+        videoId = url.split('v=')[1];
+        const ampersandPosition = videoId.indexOf('&');
+        if (ampersandPosition !== -1) {
+            videoId = videoId.substring(0, ampersandPosition);
+        }
+    } 
+    // Handle "youtu.be/" share URLs
+    else if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1];
+        const questionMarkPosition = videoId.indexOf('?');
+        if (questionMarkPosition !== -1) {
+            videoId = videoId.substring(0, questionMarkPosition);
+        }
+    }
+    // Handle if it is already an embed URL
+    else if (url.includes('youtube.com/embed/')) {
+        return url;
+    }
+
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+}
 
 // Logic for readme.html (The List)
 function renderGrid(posts) {
@@ -88,12 +109,18 @@ function loadArticle(posts) {
 
     // Handle Media Embeds
     let mediaHTML = '';
-    if(post.mediaType === 'youtube') {
+    
+    // --- UPDATED LOGIC HERE ---
+    if(post.mediaType === 'youtube' || post.mediaType === 'video') {
+        const embedUrl = getYoutubeEmbedUrl(post.mediaUrl); // Convert the URL first!
+        
         mediaHTML = `<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 30px;">
-            <iframe src="${post.mediaUrl}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+            <iframe src="${embedUrl}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>`;
+        
     } else if (post.mediaType === 'pdf') {
         mediaHTML = `<div class="pdf-container"><embed src="${post.mediaUrl}" width="100%" height="600px" type="application/pdf"></div>`;
+        
     } else if (post.mediaType === 'image') {
         mediaHTML = `<img src="${post.mediaUrl}" class="feature-image" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 30px;" alt="Resource">`;
     }
