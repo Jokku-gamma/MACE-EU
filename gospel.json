@@ -1,16 +1,5 @@
 [
   {
-    "id": "0c49b1ae-df9a-45d2-b8b1-a5f1b76d14ec",
-    "title": "Youtube video with banner test 4",
-    "author": "tester 4",
-    "date": "Dec 11, 2025",
-    "type": "video",
-    "banner": "https://jokku-gamma.github.io/MACE-EU/gospel-uploads/17c9e002af194b73a53206dd5e3bc882.png",
-    "content": "youtube video with banner test4 with tester 4",
-    "mediaType": "youtube",
-    "mediaUrl": "https://youtu.be/AvPEbvW_Idc?si=iUP40M3JtpA9RGX8"
-  },
-  {
     "id": "9eb39bf9-476f-4b81-8b8e-532aafbb6395",
     "title": "Youtube test 3",
     "author": "tester 3",
