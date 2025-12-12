@@ -67,15 +67,32 @@
 .view-nav {
     padding: 20px;
     background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .back-btn {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+    min-height: 44px;
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.back-btn:hover {
+    color: #007bff;
 }
 
 .article-content {
@@ -94,6 +111,7 @@
     font-size: 2.5rem;
     color: #222;
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 .share-btn {
@@ -104,12 +122,26 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+.share-btn:hover {
+    background: #0056b3;
 }
 
 .entry-body {
     line-height: 1.8;
     font-size: 1.1rem;
     color: #444;
+}
+
+.entry-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
 }
 
 /* Responsive Video */
@@ -126,4 +158,125 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* --- Mobile Responsive (Tablets & Below) --- */
+@media (max-width: 768px) {
+    .view-nav {
+        padding: 15px;
+    }
+
+    .back-btn {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+
+    .article-content {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .article-header {
+        margin-bottom: 30px;
+    }
+
+    .entry-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .entry-body {
+        font-size: 1rem;
+    }
+
+    .share-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* --- Mobile Responsive (Small Phones) --- */
+@media (max-width: 480px) {
+    .readme-container {
+        margin: 80px auto 40px;
+        padding: 10px;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .post-card {
+        border-radius: 10px;
+    }
+
+    .card-image {
+        height: 150px;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .meta {
+        font-size: 0.75rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .view-nav {
+        padding: 12px 10px;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+        min-height: 44px;
+        width: 100%;
+        display: flex;
+    }
+
+    .article-content {
+        margin: 10px auto;
+        padding: 12px;
+    }
+
+    .article-header {
+        margin-bottom: 20px;
+    }
+
+    .entry-title {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .entry-body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .share-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+        min-height: 44px;
+    }
+
+    .video-container {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+    }
+
+    .subtitle {
+        font-size: 0.95rem !important;
+    }
 }
